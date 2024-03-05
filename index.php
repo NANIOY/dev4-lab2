@@ -104,7 +104,7 @@ $title = isset($pages[$page]) ? $pages[$page] : "";
         <input type="submit" value="Log in" class="btn" id="btnSubmit">
       </form>
     <?php else : ?>
-      <h1 class="maincontent"><?php echo isset($pages[$page]) ? $pages[$page] : ""; ?></h1>
+      <h1 class="maincontent"><?php echo $pages[$page] ?? "Welcome to Twitch " . $_SESSION['username']; ?></h1>      
     <?php endif ?>
   </div>
 
