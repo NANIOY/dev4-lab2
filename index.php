@@ -1,4 +1,5 @@
 <?php
+session_start();
 function isLoggedIn() {
   return isset($_SESSION['username']);
 }
@@ -21,14 +22,6 @@ function isLoggedIn() {
       // ERROR
       $error = true;
     }
-  }
-
-  $page = "";
-
-  switch($page) {
-    case "browser":
-      $page = "Browse some games";
-      break;
   }
 
 ?><!DOCTYPE html>
@@ -95,8 +88,8 @@ function isLoggedIn() {
             <input type="submit" value="Log in" class="btn" id="btnSubmit">
           </form>
           <?php else: ?>
-            <h1>Welcome to twitch <?php echo $_SESSION['username']; ?></h1>
-        <?php endif ?>        
+            <h1 class="maincontent">Welcome to twitch <?php echo $_SESSION['username']; ?></h1>        
+          <?php endif ?>        
       </div>
 
 </body>
